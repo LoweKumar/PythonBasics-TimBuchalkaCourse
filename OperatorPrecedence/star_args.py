@@ -15,12 +15,26 @@
 
 
 # use of 'kwargs' - in the same above program
-def star_args(*args, **kwargs):
-    # to print in normal sentence we have to use for loop or else it will print in tuple form
-    for words in args:
-        print(words, end=' ', **kwargs)
+# def star_args(*args, **kwargs):
+#     # to print in normal sentence we have to use for loop or else it will print in tuple form
+#     for words in args:
+#         print(words, end=' ', **kwargs)
+#
+# with open("multiplsArgsDemoUsingKWargs.txt", 'w')as fileObject:
+#     star_args("Hello", 'World', "Welcome", "To", "Python", 3.7, file=fileObject)
 
-with open("multiplsArgsDemoUsingKWargs.txt", 'w')as fileObject:
-    star_args("Hello", 'World', "Welcome", "To", "Python", 3.7, file=fileObject)
+# ############################################################################################################
+def employee(**details):
+    print("Data type of argument:",type(details))
+
+    for key, value in details.items():
+
+        print("{} : {}".format(key, value))
+
+
+
+employee(fName = "Joe", lName = "Rogan", role="Junior Dev.", salary="30000")
+employee(fName= "Steve", lname = "Wozniack", role="Manager", salary ="100000", location="San Fransisco")
+employee(fName = "Mark", lName = "Twain", role="Recruit")
 
 
